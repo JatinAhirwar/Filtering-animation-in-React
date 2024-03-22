@@ -2,6 +2,7 @@ import './App.css'
 import { useEffect, useState } from 'react';
 import Movie from './components/Movie';
 import result from './data/topMovies.json'
+import Filter from './filter.jsx';
 
 function App() {
   const [top100, setTop100] = useState([]);
@@ -19,12 +20,11 @@ function App() {
 
   return (
     <div className='App'>
-      <div className='top-movies'>
-      <div>
-          {top100.map((movie) => (
-            <Movie key={movie.rank} />
-          ))}
-        </div>
+      <Filter />
+      <div className='popular-movies'>
+        {top100.map((movie) => (
+          <Movie key={movie.rank} movie={movie} />
+        ))}
       </div>
     </div>
   )

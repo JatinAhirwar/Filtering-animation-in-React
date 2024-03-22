@@ -1,8 +1,9 @@
-function Movie(){
+function Movie({movie}){
     return(
         <>
             <div>
-                <h2> title</h2>
+                <p> {movie.title} </p>
+                <img src={movie.image} alt=""/>
             </div>
         </>
     )
