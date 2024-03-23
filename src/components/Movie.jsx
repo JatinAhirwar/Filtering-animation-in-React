@@ -1,10 +1,12 @@
+import { motion } from "framer-motion";
+
 function Movie({movie}){
     return(
         <>
-            <div>
+            <motion.div layout>
                 <p> {movie.title} </p>
                 <img src={movie.image} alt=""/>
-            </div>
+            </motion.div>
         </>
     )
 }

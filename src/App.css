@@ -19,3 +19,7 @@ img{
 p{
   font-size: .8rem;
 }
+
+.active{
+  background-color: #646cff;
+}
