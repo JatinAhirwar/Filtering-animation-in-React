@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Movie from './components/Movie';
 import result from './data/topMovies.json'
 import Filter from './filter.jsx';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {
   const [top100, setTop100] = useState([]);
@@ -34,9 +34,11 @@ function App() {
       />
 
       <motion.div layout className='popular-movies'>
-        {filtered.map((movie) => (
-          <Movie key={movie.rank} movie={movie} />
-        ))}
+        <AnimatePresence>
+          {filtered.map((movie) => (
+            <Movie key={movie.rank} movie={movie} />
+          ))}
+        </AnimatePresence>
       </motion.div>
     </div>
   )
